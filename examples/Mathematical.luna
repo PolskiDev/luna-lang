@@ -1,0 +1,22 @@
+namespace "HelloMathematical"
+    private def main()
+        # Factorial
+        puts fat(35)
+
+        var factorial := fat(35)
+        puts factorial
+
+
+
+        # Pi Number
+        var PI := math.pi
+        puts PI
+
+        # From radians to degrees
+        puts math.deg(45)
+
+        var degree := math.deg(45)
+        puts degree
+    end
+
+end_namespace

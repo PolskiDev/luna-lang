@@ -1,0 +1,18 @@
+namespace "HelloWhile2"
+    private def main()
+        let age := 13
+
+        # While certain contidion
+        while age < 18 then
+            puts "A child"
+            assign age := age+1
+
+            if age > 14 then
+                break
+            end
+        end
+
+
+    end
+
+end_namespace

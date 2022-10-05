@@ -1,0 +1,18 @@
+namespace "HelloIfElse"
+    private def main()
+        let age := 13
+
+        if age > 18 then
+            puts "You are an adult."        
+        elseif age == 13 then
+            puts "You are a teen."
+        elseif age <= 3 then
+            puts "You are a child."
+        else
+            puts "You are an ET."
+        end
+
+
+    end
+
+end_namespace

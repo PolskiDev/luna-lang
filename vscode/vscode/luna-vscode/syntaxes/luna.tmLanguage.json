@@ -1,0 +1,86 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Luna Programming Language",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#numbers"
+		},
+        {
+            "include": "#storage"
+        }
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.luna",
+				"match": "\\b(namespace|end_namespace|module|if|elseif|else|end|loop|while|for|in|as|return|break|def|call|then|webimport|import|include|if_unix|if_win32|if_intel32|if_intel64|if_powerpc|if_arm|if_mips|default|public|private|class|new|extends)\\b"
+			}]
+		},
+		"comments": {
+            "patterns": [{
+                "name": "comment.block.documentation.luna",
+                "begin": "#",
+                "beginCaptures": {
+                    "0": {
+                        "name": "punctuation.definition.comment.begin.luna"
+                    }
+                },
+                "end": "\n",
+                "endCaptures": {
+                    "0": {
+                        "name": "punctuation.definition.comment.end.luna"
+                    }
+                },
+                "patterns": [{
+                    "include": "#comments"
+            	}]
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.luna",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.luna",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+            "patterns": [{
+                "name": "constant.numeric.exponential.luna",
+                "match": "([0-9]+(_?))+(\\.)([0-9]+[eE][-+]?[0-9]+)"
+            }, {
+                "name": "constant.numeric.float.luna",
+                "match": "([0-9]+(_?))+(\\.)([0-9]+)"
+            }, {
+                "name": "constant.numeric.binary.luna",
+                "match": "(?:0b)(?:(?:[0-1]+)(?:_?))+"
+            }, {
+                "name": "constant.numeric.octal.luna",
+                "match": "(?:0o)(?:(?:[0-7]+)(?:_?))+"
+            }, {
+                "name": "constant.numeric.hex.luna",
+                "match": "(?:0x)(?:(?:[0-9a-fA-F]+)(?:_?))+"
+            }, {
+                "name": "constant.numeric.integer.luna",
+                "match": "(?:(?:[0-9]+)(?:[_]?))+"
+            }]
+        },
+        "storage": {
+            "name": "storage.modifier.luna",
+            "match": "\\b(none|true|false|nil|var|let|table|assign|print|puts|scanf|Override|io.ReadFile|io.WriteFile|io.WriteFileLn|io.AppendFile|io.AppendFileLn|lvm.run|inspect)\\b"
+        }
+	},
+	"scopeName": "source.luna"
+}

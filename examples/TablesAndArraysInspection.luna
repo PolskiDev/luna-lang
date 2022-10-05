@@ -1,0 +1,33 @@
+namespace "HelloTablesAndArraysInspection"
+    private def main()
+
+        # Only values with strings
+        # 1. Strings cannot be inserted inside
+        #    a table, it means that the strings
+        #    should be declared inside variables
+        #    and after that, they can be used.
+        
+        public let julia := "Julia Lindberg"
+        public let jean := "Jean Stratford"
+        public let linda := "Linda Ansible"
+        public table students := {julia,jean,linda}
+
+        # Only values without strings
+        public let cpf_numbers := {015,904,702,514}
+
+
+        # Inspect whole table
+        call inspect(cpf_numbers) : cpf_inspect
+        puts cpf_inspect
+
+
+        # Inspect whole table
+        inspect students => students_inspect
+        puts students_inspect
+
+        # Inspect whole table
+        inspect students
+
+    end
+
+end_namespace

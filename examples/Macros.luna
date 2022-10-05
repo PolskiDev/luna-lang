@@ -1,0 +1,64 @@
+namespace "HelloMacros"
+    private def main()
+        # Detecting Operating System
+        @if_unix
+            # Running Shell Command
+            lvm.run "ls"
+        end
+
+        @if_win32
+            # Running Shell Command
+            lvm.run "dir"
+        end
+
+
+
+        # Decting Operating System and CPU Architecture
+        @if_unix
+            @if_intel32
+                puts "Using UNIX with x86"
+            end
+            @if_intel64
+                puts "Using UNIX with x86_64"
+            end
+
+            @if_arm
+                puts "Using UNIX with ARM"
+            end
+
+            @if_powerpc
+                puts "Using UNIX with PowerPC"
+            end
+            
+            @if_mips
+                puts "Using UNIX with MIPS"
+            end
+        end
+
+
+        # Decting Operating System and CPU Architecture
+        @if_win32
+            @if_intel32
+                puts "Using MS-Windows with x86"
+            end
+            @if_intel64
+                puts "Using MS-Windows with x86_64"
+            end
+
+            @if_arm
+                puts "Using MS-Windows with ARM"
+            end
+
+            @if_powerpc
+                puts "Using MS-Windows with PowerPC"
+            end
+            
+            @if_mips
+                puts "Using MS-Windows with MIPS"
+            end
+        end
+
+
+    end
+
+end_namespace

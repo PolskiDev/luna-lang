@@ -1,0 +1,7 @@
+namespace "HelloFileWriter"
+    private def main()
+        io.WriteFileLn("helloworld.txt") => "Hello my wonderful world!"
+        io.AppendFileLn("helloworld.txt") => "This was made by appending."
+    end
+
+end_namespace

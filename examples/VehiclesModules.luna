@@ -1,0 +1,25 @@
+namespace "HelloModules"
+    module Car
+    public def Car::horn()
+        puts "Horning!"
+    end
+    public def Car::drive()
+        puts "Driving!"
+    end
+    public def Car::stop()
+        puts "Stopping!"
+    end
+    var Car::weight = "1.2ton"
+    var Car::sign = 12040294
+    
+    private def main()
+        puts "Hello world"
+        call Car::horn() : none
+        call Car::drive() : none
+        call Car::stop() : none
+        
+        puts Car::weight
+        puts Car::sign
+    end
+
+end_namespace

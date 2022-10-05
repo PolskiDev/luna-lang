@@ -1,0 +1,16 @@
+namespace "HelloLoop"
+    private def main()
+        # Infinity loop
+        while 1 == 1 then
+            puts "Whoo hoo!"
+        end
+
+        # Infinity loop
+        loop
+            puts "This is Sparta!"
+        end
+
+
+    end
+
+end_namespace

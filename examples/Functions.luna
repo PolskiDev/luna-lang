@@ -1,0 +1,24 @@
+namespace "HelloFunctions"
+    module Car
+    public def Car::drive()
+        puts "I'm driving"
+    end
+    public def Car::getSize(kg)
+        return kg+30
+    end
+
+    private def Car::getPassword(pw)
+        return pw+50/2
+    end
+
+
+    private def main()
+        call Car::drive() : none
+        call Car::getSize(450) : mySize
+        puts mySize
+
+        call Car::getPassword(42) : myPassword
+        puts myPassword
+    end
+
+end_namespace

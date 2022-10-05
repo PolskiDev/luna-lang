@@ -1,0 +1,24 @@
+namespace "HelloFileReader"
+    private def createFile()
+        io.WriteFileLn("helloworld.txt") => "Hello my wonderful world!"
+    end
+    private def another()
+        io.ReadFile("helloworld.txt") => private myFilePrivate
+        puts myFilePrivate
+    end
+
+
+    private def main()
+        # Create new file
+        call createFile() : none
+        
+        # Read the created file
+        io.ReadFile("helloworld.txt") => public myFile
+        puts myFile
+
+        # Read as private attribute
+        call another() : none
+
+    end
+
+end_namespace

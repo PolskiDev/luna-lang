@@ -1,0 +1,34 @@
+namespace "HelloClasses"
+    public class Car
+    public def Car::drive()
+        puts "I'm driving"
+    end
+    public def Car::stop()
+        puts "Stopped"
+    end
+
+
+    # Inheritance
+    public class Bus extends Car
+    public def Bus::drift()
+        puts "Drifting"
+    end
+
+
+    private def main()
+        puts "Hello world"
+
+        # Creating objects
+        public new Toyota : Car
+        public new Marcopolo : Bus
+
+        # Using Car object
+        call Toyota::horn() : none
+        call Toyota::drive() : none
+        
+        # Using Bus object
+        call Marcopolo::stop() : none
+        call Marcopolo::drift() : none
+    end
+
+end_namespace

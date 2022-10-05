@@ -1,0 +1,20 @@
+namespace "HelloForIn"
+    private def main()
+        puts "These are the first:"
+        for i in 1..10 then
+            print "I am writing at: "
+            print i
+            puts " cycle."
+        end
+
+
+        puts "Yet another:"
+        for i in 1..1000
+            let msg := "I am writing at: "
+            let lead := " cycle."
+            puts msg+i+lead
+        end
+    
+    end
+
+end_namespace
