@@ -1,0 +1,382 @@
+- Compile THIS_LANGUAGE from sources:
+ - Node.js v12 or newer
+ - NPM v7 or newer
+ - NPM modules: TypeScript and @types/node
+ - NPM module:  PKG
+
+cd src && make all test
+Generated files: **newluac** and **lpm**
+
+
+-- Compile source-code to bytecode
+newluac -c [file].lang
+
+-- Check version
+newluac --version
+
+
+-- Install and uninstall libraries from the internet
+lpm -i https://yoursite.org.br/lib.luac  
+lpm -u lib.luac  
+
+-- Auto-install libraries from "deps.config"
+lpm --config
+
+
+- Basic program in THIS_LANGUAGE
+
+    namespace "HelloWorldProgram"
+        puts "Hello world"
+
+    end_namespace
+  
+
+  
+Compile to bytecode with: newluac -c Main.lang
+Execute bytecode with: lua Main.luac
+
+
+- GLOBAL VARIABLES
+var [identificator] := [value]   
+var msg := "Hello world"  
+var age := 18 
+
+
+- LOCAL VARIABLES
+let [identificator] := [value]  
+let msg := "Hello world"  
+let age := 18  
+
+
+- STANDARD I/O
+-- Jump line (it does line feed)
+puts [value/string]  
+puts "Hello world"  
+puts msg  
+
+-- Same line (it doesn't do line feed)
+print [value/string]  
+print "Hello world"  
+print msg  
+
+
+- Include modules in Lua and THIS_LANGUAGE,  
+similar to **#include [spec.lua]** in C.  
+include "[module]"  
+include "spec.lua"  
+
+
+- Import local modules from Lua
+import "[module]" as [module_nickname]  
+import "os" as System  
+
+
+- Import global modules from Lua and THIS_LANGUAGE
+import "[module_identificator]"  
+import "Math"  
+
+
+- Declare module in THIS_LANGUAGE
+module "[module_identificator]"  
+module "Math"  
+
+- Declare, initialize and do references to module variables and functions
+
+- **Variables**
+var Math::MyValue := 12  
+  
+let Math::MyValue := 12.67456
+
+
+- **Function**
+
+public def Math::Calculate(num)
+    return num+5
+end
+
+call Math::Calculate(45) : result
+puts result
+
+
+- Loops
+
+for i in 1..10
+    ...        
+end
+
+
+
+while a > b
+    ...
+
+    if a == b
+        break
+    end
+end
+
+
+- If-elseif-else
+
+    if age == 18
+        ...
+
+    elseif age [ 5
+        ...
+
+    else
+        ...
+
+    end
+
+
+- Tables, Associative Arrays, Vectors - FIX ME
+
+
+public  table MyTable := {"Hello world",12,35.4}  
+private table MyTable := {2,4,6,8,10}  
+default table MyTable := {2.8,4.7,6.2,8.9,10.3}  
+
+
+-- Get values from table - FIX ME
+var myValue := MyTable[1]  
+
+- OBJECT-ORIENTED PROGRAMMING - Classes
+-- Default modificator
+
+default class [identificator]
+    default def [identificator].[method_identificator] ([param1],[param2],[param3], ...)
+        ...
+    end
+  
+
+
+default class Dog
+    default def Dog.speak(phrase)
+        ...
+    end
+ 
+
+
+-- Public modificator
+
+public class [identificator]
+    public def [identificator].[method_identificator] ([param1],[param2],[param3], ...)
+        ...
+    end
+  
+   
+
+public class Dog
+    public def Dog.speak(phrase)
+        ...
+    end
+  
+
+
+
+-- Private modificator
+
+private class [identificator] extends [another_identificator]
+    @Override
+    private def [identificator].[method_identificator] ([param1],[param2],[param3], ...)
+        ...
+    end
+
+    default def [identificator].[method_identificator] ([param1],[param2],[param3], ...)
+        ...
+    end
+  
+
+
+private class Cat extends Dog
+    @Override
+    private def Cat.speak(phrase)
+        ...
+    end
+
+    default def Cat.meow()
+        ...
+    end
+  
+
+
+- OBJECT-ORIENTED PROGRAMMING - Objects
+-- Default modificator
+It gives global/public access to instantiated object [object_identificator] from [class_identificator]
+  
+
+default new [object_identificator] : [class_identificator]  
+default new Tom : Dog  
+
+
+-- Public modificator
+It gives global/public access to instantiated object [object_identificator] from [class_identificator]
+
+public new [object_identificator] : [class_identificator]  
+public new Tom : Dog  
+
+-- Private modificator
+It gives local/private access to instantiated object [object_identificator] from [class_identificator]
+
+private new [object_identificator] : [class_identificator]  
+private new Tom : Dog  
+
+- Static properties
+[class_identificator].[static_property] := [value]  
+Dog.weight := 45
+Dog.name := "Tom"
+
+
+
+- Call function without return (method)
+-- Call function from class object
+
+call [object_identificator].[method_identificator] ([param1],[param2],[param3], ...) : none
+  
+call Dog.bark() : none  
+call Dog.bark(a,b,c) : none  
+
+
+-- Call function from module
+
+call [method_identificator].[method_identificator] ([param1],[param2],[param3], ...) : none
+  
+call Math.calculate() : none  
+call Math.calculate(a,b,c) : none  
+
+
+- Call function with return (function)
+-- Call function from class object
+
+call [object_identificator].[method_identificator] ([param1],[param2],[param3], ...) : [return_identificator]
+  
+call Dog.bark() : spoke_dog  
+call Dog.bark(a,b,c) : spoke_dog  
+
+
+-- Call function from module
+
+call [method_identificator].[method_identificator] ([param1],[param2],[param3], ...) : [return_identificator]
+
+call Math.calculate() : result  
+call Math.calculate(a,b,c) : result  
+  
+-- Detect Operating System
+
+    #if_win32
+        ...
+    end
+
+
+    #if_unix
+        ...
+    end
+  
+
+-- Detect CPU Architecture
+
+    #if_intel32
+        ...
+    end
+
+
+    #if_intel64
+        ...
+    end
+
+
+    #if_powerpc
+        ...
+    end
+
+
+    #if_arm
+        ...
+    end
+
+
+    #if_mips
+        ...
+    end
+
+
+-- Run System Commands
+lvm.run [command]  
+lvm.run "uname -a"  
+
+-- Factorial
+
+var myFactorial := fat(5)
+puts myFactorial
+
+  
+  
+-- Using Lua integration
+
+var pi := math.pi
+puts pi
+
+
+
+var random := math.random(0,256)
+puts random
+
+
+-- File Handling (Reading)
+
+    io.ReadFile("text.txt") => public MyFile
+    puts MyFile
+
+-- File Handling (Writing/Creating New)
+
+    io.WriteFile("text.txt") => "Hello world\n"
+
+  
+- **Line Feed**  
+
+    io.WriteFileLn("text.txt") => "Hello world"
+  
+-- File Handling (Appending)
+
+    io.AppendFile("text.txt") =] "Second time\n"
+  
+  
+- **Line Feed**  
+
+    io.AppendFileLn("text.txt") =] "Second time"
+
+
+
+- Strings concatenation
+Strings concatenation can be done with double dots (..) or plus signal (+), both gives the same result.  
+  
+- **On function parameters I**
+
+    public def say(name)
+        let msg := "Hello "
+        puts msg+name
+    end
+
+    call say("Gustavo Guanabara") : none
+
+  
+- **On function parameters II**
+
+    public def say(name)
+        let msg := "Hello "
+        return msg+name
+    end
+
+    call say("Gustavo Guanabara") : person
+    puts person
+
+  
+**With multiple variables**
+
+    let msg := "Hello "
+    let name := "Gustavo "
+    let friend := "my friend!"
+
+    puts msg+name+friend
+
+  

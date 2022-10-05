@@ -1,0 +1,14 @@
+# cmason-dev -t all
+# cmason-dev -t debug
+# cmason-dev -t npm
+
+# cmason-dev -t build
+# cmason-dev -t clean
+
+
+all: "npx tsc src/*.ts && node src/lunac.js -c Main.luna"
+debug: "npx tsc src/*.ts && node src/lunac.js -c Main.luna --debug"
+npm: "npm install --save-dev typescript @types/node"
+
+build: "npx tsc src/*.ts"
+clean: "rm -Rf src/*.js src/lib/*.js"

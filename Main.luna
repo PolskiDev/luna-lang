@@ -1,0 +1,35 @@
+namespace "HelloWorldProgram"
+
+    public class Auto extends Jolia
+    private def auto()
+        for i in 1..10 then true false nil end
+    end
+
+    public def dizer(nome)
+        let msg := "Hello "
+        puts msg+nome
+    end
+
+    call dizer("Gustavo") : none
+    
+
+    @if_unix
+        lvm.run "ls"
+    end
+
+    @if_win32
+        lvm.run "dir"
+    end
+
+    puts math.pi
+    puts fat(5)
+
+    # io.ReadFile("keywords.md") => private leitura
+    # puts leitura
+
+    io.WriteFileLn("testing.txt") => "Hello world\n"
+    io.AppendFileLn("testing.txt") => "Second time"
+
+
+    
+end_namespace

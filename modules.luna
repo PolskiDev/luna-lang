@@ -1,0 +1,27 @@
+namespace "HelloModules"
+    module Carro
+    public def Carro::buzinar()
+        puts "Buum Buum!"    
+    end
+
+    public class Carrinho
+    public def Carrinho::andar()
+        puts "Estou andando"
+    end
+    public def Carrinho::parar()
+        puts "Parei"
+    end
+
+
+
+    public class Onibus extends Carrinho
+
+
+    private def main()
+        puts "Hello world"
+        call Carro::buzinar() : none
+        call Carrinho::andar() : none
+        call Onibus::parar() : none
+    end
+
+end_namespace

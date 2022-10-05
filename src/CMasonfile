@@ -1,0 +1,49 @@
+# cmason-common -t all
+WIN64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg -t node14-win lunac.js -o lunac && npx pkg -t node14-win lpm.js -o lpm"
+WIN32_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+WIN*ARM64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg -t node14-win-arm64 lunac.js -o lunac && npx pkg -t node14-win-arm64 lpm.js -o lpm"
+
+MAC32_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+MAC64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+MAC*ARM64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+
+LINUX32_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+LINUX64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg -t node14-linux lunac.js -o lunac && npx pkg -t node14-linux lpm.js -o lpm"
+LINUX*ARM32_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+LINUX*ARM64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg -t node14-linux-arm64 lunac.js -o lunac && npx pkg -t node14-linux-arm64 lpm.js -o lpm"
+
+FREEBSD32_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+FREEBSD64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+FREEBSD*ARM32_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+FREEBSD*ARM64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+
+OPENBSD32_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+OPENBSD64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+OPENBSD*ARM32_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+OPENBSD*ARM64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+
+SUNOS32_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+SUNOS64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+SUNOS*ARM32_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+SUNOS*ARM64_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+
+
+UNIVERSAL_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.ts && npx pkg lunac.js -o lunac && npx pkg lpm.js -o lpm"
+
+
+
+WIN64_clean: "del /f *.js"
+WIN32_clean: "del /f *.js"
+WIN*ARM64_clean: "del /f *.js"
+
+MAC32_clean: "rm -Rfv *.js"
+MAC64_clean: "rm -Rfv *.js"
+MAC*ARM64_clean: "rm -Rfv *.js"
+
+LINUX32_clean: "rm -Rfv *.js"
+LINUX64_clean: "rm -Rfv *.js"
+LINUX*ARM32_clean: "rm -Rfv *.js"
+LINUX*ARM64_clean: "rm -Rfv *.js"
+
+UNIVERSAL_clean: "rm -Rfv *.js"
+

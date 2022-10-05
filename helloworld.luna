@@ -1,0 +1,14 @@
+namespace "HelloLoop"
+    private def main()
+        public let clarice := "Clarice"
+        public let jonathan := "Jonathan Scover"
+        private table integers := {15.4,14.5,21,421,clarice,jonathan}
+
+        @Override
+        scanf : private leitura
+        inspect integers
+        var value := integers[2]
+        puts value
+    end
+
+end_namespace
