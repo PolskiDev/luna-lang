@@ -37,6 +37,8 @@ LunaC and all of its tools are available for download under BSD (2-clause) free 
 - NPM ([Gerenciador de Pacotes](https://www.npmjs.com/))
 - [GNU Makefile](https://community.chocolatey.org/packages/make#install) or [CMason](http://cmason.gabrielmargarido.org/)
 - PKG ([NPM Module](https://www.npmjs.com/package/pkg))
+- Bash (Bourne Again Shell)
+- [CMason](http://cmason.gabrielmargarido.org)
 
 
 ## Free and Open Source software
