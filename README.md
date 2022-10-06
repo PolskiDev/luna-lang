@@ -1,5 +1,5 @@
 
-## Luna Programming Language
+## [Luna Programming Language](http://luna.gabrielmargarido.org)
 
 <img src="luna.png" align="center" width="50%">
 
@@ -33,8 +33,9 @@ LunaC and all of its tools are available for download under BSD (2-clause) free 
 
 
 **Luna requires to be built:**
-- Node.js ([Runtime Javascript](https://nodejs.org/pt-br/))
-- NPM ([Gerenciador de Pacotes](https://www.npmjs.com/))
+- [Lua](https://www.lua.org/download.html)
+- Node.js ([Javascript Runtime](https://nodejs.org/pt-br/))
+- NPM ([Package Manager](https://www.npmjs.com/))
 - [GNU Makefile](https://community.chocolatey.org/packages/make#install) or [CMason](http://cmason.gabrielmargarido.org/)
 - PKG ([NPM Module](https://www.npmjs.com/package/pkg))
 - Bash (Bourne Again Shell)
