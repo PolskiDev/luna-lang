@@ -12,7 +12,7 @@ namespace "HelloForIn"
         for i in 1..1000
             let msg := "I am writing at: "
             let lead := " cycle."
-            puts msg+i+lead
+            puts msg..i..lead
         end
     
     end

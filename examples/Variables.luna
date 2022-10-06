@@ -1,18 +1,18 @@
 namespace "HelloVariables"
     module Car
-    var Car::name := "Jac"  -- Global variable (*public)
+    var Car::name := "Jac"  # Global variable (*public)
 
     private def Car::sayThis()
-        let Car::weight := 3400  -- Local varible (*private)
+        let Car::weight := 3400  # Local varible (*private)
     end
 
 
     private def main()
         call Car::sayThis() : none
-        puts Car::name     -- It's gonna put the correct value
-        puts Car::weight   -- It's gonna generate an error
+        puts Car::name     # It's gonna put the correct value
+        puts Car::weight   # It's gonna generate an error
 
-        assign Car::name = "Toyota"   -- I'ts gonna reassign from "Jac" to "Toyota"
+        assign Car::name := "Toyota"   # I'ts gonna reassign from "Jac" to "Toyota"
         puts Car::name
     end
 
