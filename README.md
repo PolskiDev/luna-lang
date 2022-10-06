@@ -44,6 +44,23 @@ Entire Luna programming language source-code is available
 under FreeBSD (2-clause) license as free and open source software.
 
 
+## Releaf mode
+### Build from sources - Releaf mode
+```cd src && sudo cmason-save -t releaf```  
+
+### Uninstall from sources - Releaf mode
+```cd src && sudo cmason-save -t unreleaf```  
+
+
+
+## Standard mode
+### Build from sources - Standard mode
+```cd src && cmason-common -t all```  
+
+### Clean from sources - Standard mode
+```cd src && cmason-common -t clean```   
+
+
 ## Install Visual Studio Code Extension
 Installing VSCode extension by copying diretory "luna-vscode"
 to corresponding location
