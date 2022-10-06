@@ -1,0 +1,4 @@
+#!/bin/bash
+# cmason-common -t
+# cmason-common -t all
+node /usr/local/bin/luna/lunac.js $1 $2

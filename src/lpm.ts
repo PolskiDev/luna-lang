@@ -129,7 +129,7 @@ if(process.argv[2] == "-i") {
     console.log(`\nCurrent XPM version: ${version}\n`)
 } else {
     console.log("--- Luna Programming Language Package Manager ----\n")
-    console.log("lpm -version\n")
+    console.log("lpm --version\n")
     console.log("----------------INSTALLING MODULES-------------")
     console.log("lpm -i http://yoursite.com.br/file.js")
     console.log("lpm -i http://yoursite.com.br/file.ts")

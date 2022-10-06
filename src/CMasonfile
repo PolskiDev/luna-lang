@@ -32,18 +32,37 @@ UNIVERSAL_all: "npm install --save-dev typescript @types/node pkg && npx tsc *.t
 
 
 
+# cmason-common -t clean
 WIN64_clean: "del /f *.js"
 WIN32_clean: "del /f *.js"
 WIN*ARM64_clean: "del /f *.js"
 
-MAC32_clean: "rm -Rfv *.js"
-MAC64_clean: "rm -Rfv *.js"
-MAC*ARM64_clean: "rm -Rfv *.js"
+MAC32_clean: "rm -Rfv *.js build/luna/*js"
+MAC64_clean: "rm -Rfv *.js build/luna/*js"
+MAC*ARM64_clean: "rm -Rfv *.js build/luna/*js"
 
-LINUX32_clean: "rm -Rfv *.js"
-LINUX64_clean: "rm -Rfv *.js"
-LINUX*ARM32_clean: "rm -Rfv *.js"
-LINUX*ARM64_clean: "rm -Rfv *.js"
+LINUX32_clean: "rm -Rfv *.js build/luna/*js"
+LINUX64_clean: "rm -Rfv *.js build/luna/*js"
+LINUX*ARM32_clean: "rm -Rfv *.js build/luna/*js"
+LINUX*ARM64_clean: "rm -Rfv *.js build/luna/*js"
 
 UNIVERSAL_clean: "rm -Rfv *.js"
+
+
+# sudo cmason-save -t releaf
+LINUX_releaf: "npm install --save-dev typescript @types/node && npx tsc *.ts && cp -Rfv *.js build/luna/ && chmod +x build/lunac build/lpm && cp -Rfv build/* /usr/local/bin/ && cp -Rfv node_modules /usr/local/bin/luna/node_modules"
+MAC_releaf: "npm install --save-dev typescript @types/node && npx tsc *.ts && cp -Rfv *.js build/luna/ && chmod +x build/lunac build/lpm && cp -Rfv build/* /usr/local/bin/ && cp -Rfv node_modules /usr/local/bin/luna/node_modules"
+FREEBSD_releaf: "npm install --save-dev typescript @types/node && npx tsc *.ts && cp -Rfv *.js build/luna/ && chmod +x build/lunac build/lpm && cp -Rfv build/* /usr/local/bin/ && cp -Rfv node_modules /usr/local/bin/luna/node_modules"
+OPENBSD_releaf: "npm install --save-dev typescript @types/node && npx tsc *.ts && cp -Rfv *.js build/luna/ && chmod +x build/lunac build/lpm && cp -Rfv build/* /usr/local/bin/ && cp -Rfv node_modules /usr/local/bin/luna/node_modules"
+SUNOS_releaf: "npm install --save-dev typescript @types/node && npx tsc *.ts && cp -Rfv *.js build/luna/ && chmod +x build/lunac build/lpm && cp -Rfv build/* /usr/local/bin/ && cp -Rfv node_modules /usr/local/bin/luna/node_modules"
+
+UNIVERSAL_releaf: "npm install --save-dev typescript @types/node && npx tsc *.ts && cp -Rfv *.js build/luna/ && chmod +x build/lunac build/lpm && cp -Rfv build/* /usr/local/bin/ && cp -Rfv node_modules /usr/local/bin/luna/node_modules"
+
+
+# sudo cmason-save -t unreleaf
+LINUX_unreleaf: "rm -Rfv /usr/local/bin/luna /usr/local/bin/lunac /usr/local/bin/lpm build/luna/*js"
+MAC_unreleaf: "rm -Rfv /usr/local/bin/luna /usr/local/bin/lunac /usr/local/bin/lpm build/luna/*js"
+FREEBSD_unreleaf: "rm -Rfv /usr/local/bin/luna /usr/local/bin/lunac /usr/local/bin/lpm build/luna/*js"
+OPENBSD_unreleaf: "rm -Rfv /usr/local/bin/luna /usr/local/bin/lunac /usr/local/bin/lpm build/luna/*js"
+SUNOS_unreleaf: "rm -Rfv /usr/local/bin/luna /usr/local/bin/lunac /usr/local/bin/lpm build/luna/*js"
 

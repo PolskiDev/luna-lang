@@ -35,6 +35,18 @@ else
 	endif
 endif
 
+# @targets
+# make all
+# make clean
+# make linux
+# make linux-arm64
+# make windows
+# make windows-arm64
+# make releaf
+# make unreleaf
+# make help
+# make test
+
 
 all: guess
 link:
@@ -55,11 +67,25 @@ windows: link
 windows-arm64: link
 	$(CC) -t node14-win-arm64 $(MAIN).js -o $(MAIN)
 
+
+releaf:
+	npm install --save-dev typescript @types/node
+	npx tsc *.ts
+	cp -Rfv *.js build/luna/
+	chmod +x build/lunac build/lpm 
+	cp -Rfv build/* /usr/local/bin/
+	cp -Rfv node_modules /usr/local/bin/luna/node_modules
+
+unreleaf:
+	rm -Rfv /usr/local/bin/luna
+	rm -Rfv /usr/local/bin/lunac
+	rm -Rfv /usr/local/bin/lpm
+
 clean:
 ifeq ($(OSFLAG), WIN32)
 	del /f *.js
 else
-	rm -Rf *.js
+	rm -Rf *.js build/luna/*js
 endif
 
 
