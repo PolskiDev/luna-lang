@@ -47,6 +47,7 @@ under FreeBSD (2-clause) license as free and open source software.
 
 
 ## Releaf mode
+Prefer always installing Luna using standard mode, due to running and compiling fast speeds. Releaf mode only exists for supporting unsupported architectures and/or operating systems on standard mode.  
 ### Build from sources - Releaf mode
 ```cd src && sudo cmason-save -t releaf```  
 
@@ -56,6 +57,7 @@ under FreeBSD (2-clause) license as free and open source software.
 
 
 ## Standard mode
+Use this installing mode for building and compiling LunaC and LPM to binary files on supported operating systems and architectures. Standard mode provides fast running and bytecode-compiling speeds, unlike "Releaf mode".   
 ### Build from sources - Standard mode
 ```cd src && cmason-common -t all```  
 
