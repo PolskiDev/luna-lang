@@ -362,7 +362,7 @@ export function asmCompileFunction() {
             let name = t[i+1]
             let val = t[i+3]
             name = name.replace(tok.lua_module_separator,".")
-            val = val.replace("+","..") // HERE
+            //val = val.replace("+","..") // HERE
 
             if(t[i+2] != tok.assign) {
                 console.log(`\n\n\x1b[33mERROR 1000: Use (${tok.assign}) on variable (${name}) assignment\n\n`);    
@@ -378,7 +378,7 @@ export function asmCompileFunction() {
             let name = t[i+1]
             let val = t[i+3]
             name = name.replace(tok.lua_module_separator,".")
-            val = val.replace("+","..") // HERE
+            //val = val.replace("+","..") // HERE
 
             if(t[i+2] != tok.assign) {
                 console.log(`\n\n\x1b[33mERROR 1000: Use (${tok.assign}) on variable (${name}) assignment\n\n`);    
@@ -431,7 +431,7 @@ export function asmCompileFunction() {
         if (t[i] == tok.std_out) {
             let val = t[i+1]
             val = val.replace(tok.lua_module_separator,".")
-            val = val.replace("+","..")
+           //val = val.replace("+","..")
 
             if(t[i+2].slice(0,1) == "(") {
                 fs.appendFileSync(asm,`io.write(${val}${t[i+2]})\n`)
@@ -442,7 +442,7 @@ export function asmCompileFunction() {
         if (t[i] == tok.std_outln) {
             let val = t[i+1]
             val = val.replace(tok.lua_module_separator,".")
-            val = val.replace("+","..")
+            //val = val.replace("+","..")
             
             if(t[i+2].slice(0,1) == "(") {
                 fs.appendFileSync(asm,`print(${val}${t[i+2]})\n`)
