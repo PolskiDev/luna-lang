@@ -79,7 +79,7 @@
         },
         "storage": {
             "name": "storage.modifier.luna",
-            "match": "\\b(none|true|false|nil|var|let|table|assign|print|puts|scanf|Override|io.ReadFile|io.WriteFile|io.WriteFileLn|io.AppendFile|io.AppendFileLn|lvm.run|inspect)\\b"
+            "match": "\\b(none|true|false|nil|var|let|table|assign|print|puts|scanf|Override|io.ReadFile|io.WriteFile|io.WriteFileLn|io.AppendFile|io.AppendFileLn|lvm.run|inspect|MathExp)\\b"
         }
 	},
 	"scopeName": "source.luna"

@@ -7,7 +7,7 @@ import * as luaclass from './class_def';
 
 
 let execfile = process.argv[1];
-const version = "1.0"
+const version = "1.1"
 
 
 var procmode;
@@ -494,6 +494,19 @@ export function asmCompileFunction() {
         }
 
 
+        if(t[i] == tok.math_exp) {
+            let exp = t[i+1].slice(1,-1)
+            let visibility = t[i+3]
+            let varname = t[i+4]
+
+            if (visibility == tok.public_tok
+            || visibility == tok.default_tok) {
+                fs.appendFileSync(asm,`${varname} = ${exp}\n`)
+            } else if (visibility == tok.private_tok) {
+                fs.appendFileSync(asm,`local ${varname} = ${exp}\n`)
+            }
+            
+        }
 
         if(t[i] == tok.function_then) {
             fs.appendFileSync(asm,"then\n")
@@ -526,7 +539,7 @@ if(procmode == "-c") {
     LuaCBuildFunction();
     
 } else if(procmode == "--version") {
-    console.log(`\nCurrent L++ version: v${version}\n`)
+    console.log(`\nCurrent LunaC version: v${version}\n`)
 
 } else {
     console.log("\n--- Luna Programming Language Compiler Syntax ---")

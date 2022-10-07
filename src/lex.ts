@@ -32,7 +32,7 @@ export const break_tok = "break"
 export const for_tok = "for"
 export const in_tok = "in"
 export const loop = "loop"
-
+export const math_exp = "MathExp"
 
 
 export const std_out = "print"

@@ -126,7 +126,7 @@ if(process.argv[2] == "-i") {
         console.error(`Cannot uninstall module or library ${URL} at ${downloadedPath} (${downloadedPath}/${URL}). Try using -u option with superuser privileges (sudo), (su -) or open a terminal window as System Administrator`)
     }
 } else if (process.argv[2] == "--version") {
-    console.log(`\nCurrent XPM version: ${version}\n`)
+    console.log(`\nCurrent LPM version: ${version}\n`)
 } else {
     console.log("--- Luna Programming Language Package Manager ----\n")
     console.log("lpm --version\n")
